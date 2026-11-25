@@ -21,7 +21,7 @@ class ContactDirectory {
  private final String fileName = "contacts.txt";
  ContactDirectory() { loadContacts(); }
  void addContact(String name, String phone, String email) {
- if (!phone.matches("\\\\d{10}")) {
+ if (!phone.matches("\\d{10}")) {
  System.out.println("Invalid phone number. Enter 10 digits.");
  return;
  }
@@ -66,7 +66,7 @@ class ContactDirectory {
  System.out.println("Contact not found.");
  }
  void updatePhone(String name, String newPhone) {
- if (!newPhone.matches("\\\\d{10}") ||
+ if (!newPhone.matches("\\d{10}") ||
  (phoneMap.containsKey(newPhone) &&
  !phoneMap.get(newPhone).getName().equalsIgnoreCase(name))) {
  System.out.println("Invalid or duplicate phone number.");
